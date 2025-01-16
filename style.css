@@ -1,0 +1,140 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    background: url("background.jpg") no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navigation Bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(51, 51, 51, 0.9);
+    color: white;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .menu a {
+    color: white;
+    text-decoration: none;
+    margin-right: 15px;
+    font-size: 16px;
+}
+
+.navbar .menu a:hover {
+    text-decoration: underline;
+}
+
+.navbar .logout a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    background-color: #f44336;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.navbar .logout a:hover {
+    background-color: #d32f2f;
+}
+
+/* Main Content Area */
+.content {
+    margin-top: 60px; /* Space for the fixed navbar */
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 60px); /* Adjust height for the navbar */
+}
+
+/* Upper Section */
+.upper {
+    flex: 3; /* Takes 3/4 of the space */
+    position: relative;
+    overflow: hidden;
+}
+
+.upper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.upper img.active {
+    opacity: 1;
+}
+
+/* Lower Section */
+.lower {
+    flex: 1; /* Takes 1/4 of the space */
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    color: white;
+}
+
+.lower > div {
+    flex: 1;
+    padding: 10px;
+}
+
+.socials h3,
+.contact h3,
+.about h3 {
+    margin-bottom: 10px;
+    color: white;
+}
+
+.socials p,
+.contact p,
+.about p {
+    margin-bottom: 5px;
+    color: #ccc;
+}
+
+.lower a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.lower a:hover {
+    text-decoration: underline;
+}
+
+/* Add responsiveness for smaller screens */
+@media (max-width: 500px) {
+    .navbar {
+        flex-wrap: wrap;
+        text-align: center;
+    }
+
+    .lower {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .lower > div {
+        width: 100%;
+        text-align: center;
+    }
+}
