@@ -5,11 +5,65 @@
     box-sizing: border-box;
 }
 
+/* Style the login container */
+.login-container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+/* Style form elements */
+input[type="text"], input[type="password"], input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Style links */
+p {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
 /* Body Styling */
 body {
     font-family: Arial, sans-serif;
-    background: url("background.jpg") no-repeat center center fixed;
-    background-size: cover;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
     margin: 0;
     padding: 0;
 }
@@ -126,6 +180,10 @@ body {
     .navbar {
         flex-wrap: wrap;
         text-align: center;
+    }
+
+    button {
+        font-size: 14px;
     }
 
     .lower {
