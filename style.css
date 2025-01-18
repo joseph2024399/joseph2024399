@@ -80,8 +80,22 @@ body {
     top: 0;
     width: 100%;
     z-index: 100;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0);
+    z-index: 100;
 }
+
+
+.navbar .logo {
+    flex-shrink: 0;
+}
+
+.navbar .logo img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
 
 .navbar .menu a {
     color: white;
@@ -107,12 +121,70 @@ body {
     background-color: #d32f2f;
 }
 
+/* Main Layout */
+.main-layout {
+    display: flex;
+    flex-grow: 1;
+    margin-top: 60px; /* To avoid overlap with navbar */
+    width: 100%;
+}
+
+/* Sidebar Menu */
+.sidebar {
+    width: 250px;
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    position: relative;
+    transition: width 0.3s ease-in-out;
+    overflow: hidden;
+}
+
+.sidebar .toggle-btn {
+    background: none;
+    color: white;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.sidebar .menu-items {
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar .menu-items a {
+    color: white;
+    text-decoration: none;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.sidebar .menu-items a:hover {
+    text-decoration: underline;
+}
+
+.sidebar.minimized {
+    width: 60px;
+}
+
+.sidebar.minimized .menu-items a {
+    display: none;
+}
+
 /* Main Content Area */
 .content {
     margin-top: 60px; /* Space for the fixed navbar */
     display: flex;
     flex-direction: column;
     height: calc(100vh - 60px); /* Adjust height for the navbar */
+	flex-grow: 1;
+    padding: 20px;
+}
+
+.content h1 {
+    margin-bottom: 20px;
 }
 
 /* Upper Section */
@@ -135,6 +207,29 @@ body {
 
 .upper img.active {
     opacity: 1;
+}
+
+/* Overlay text styling */
+.overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for better readability */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.overlay-text h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.overlay-text p {
+    font-size: 1.2rem;
 }
 
 /* Lower Section */
